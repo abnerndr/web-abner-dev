@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 
-import '@/styles/tailwind.css'
+import '@/assets/styles/tailwind.css'
 import 'focus-visible'
 
 function usePrevious(value) {
