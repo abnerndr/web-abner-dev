@@ -2,8 +2,9 @@ import { ReactNode } from "react";
 
 export type CardProps = {
   as?: string | undefined | any;
-  className: any;
-  children: ReactNode;
+  onClick?: any;
+  className?: any;
+  children?: ReactNode;
 };
 
 export type CardLinkProps = {

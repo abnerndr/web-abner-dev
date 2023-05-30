@@ -198,12 +198,6 @@ function Photos() {
   );
 }
 
-type AboutMeProps = {
-  id: string;
-  title: string;
-  description: string;
-}[];
-
 function About() {
   return (
     <div>

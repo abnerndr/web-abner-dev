@@ -1,4 +1,5 @@
-import { Fragment, ReactNode, useEffect, useRef } from "react";
+/* eslint-disable react/jsx-no-undef */
+import { Fragment, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -15,6 +16,8 @@ import {
   NavItemProps,
 } from "./types/header";
 import { clamp } from "@/utils/clamp";
+import ReactFlagsSelect from "react-flags-select";
+import { setCookie } from "cookies-next";
 
 function MobileNavItem({ href, children }: MobileNavItemProps) {
   return (
@@ -136,7 +139,6 @@ function ModeToggle() {
       window.localStorage.isDarkMode = isDarkMode;
     }
   }
-
   return (
     <button
       type="button"
@@ -147,6 +149,24 @@ function ModeToggle() {
       <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-violet-50 [@media(prefers-color-scheme:dark)]:stroke-violet-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-violet-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-violet-600" />
       <MoonIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-violet-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-violet-500" />
     </button>
+  );
+}
+
+function ToggleFlag() {
+  const [isLanguage, setIsLanguage] = useState<string>("US");
+
+  return (
+    <>
+      <ReactFlagsSelect
+        countries={["US", "BR"]}
+        customLabels={{ US: "English", BR: "Portugues" }}
+        selected={isLanguage}
+        onSelect={(code) => {
+          setIsLanguage(code);
+          setCookie("language", code);
+        }}
+      />
+    </>
   );
 }
 
@@ -351,7 +371,10 @@ export function Header() {
               </div>
               <div className="flex justify-end md:flex-1">
                 <div className="pointer-events-auto">
-                  <ModeToggle />
+                  <div className="flex items-center gap-x-3">
+                    <ModeToggle />
+                    <ToggleFlag />
+                  </div>
                 </div>
               </div>
             </div>
