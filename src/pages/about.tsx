@@ -1,20 +1,23 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import clsx from 'clsx'
+/* eslint-disable react/no-unescaped-entities */
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import clsx from "clsx";
 
-import { Container } from '@/components/Container'
+import { Container } from "@/components/Container";
 import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
   TwitterIcon,
-} from '@/components/SocialIcons'
-import portraitImage from '@/assets/images/portrait.jpg'
+} from "@/components/SocialIcons";
+import portraitImage from "@/assets/images/portrait.jpg";
+import { About } from "@/types/about";
+import { MailIcon2 } from "@/components/Icons";
 
-function SocialLink({ className, href, children, icon: Icon }) {
+function SocialLink({ className, href, children, icon: Icon }: About) {
   return (
-    <li className={clsx(className, 'flex')}>
+    <li className={clsx(className, "flex")}>
       <Link
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-violet-500 dark:text-zinc-200 dark:hover:text-violet-500"
@@ -23,18 +26,7 @@ function SocialLink({ className, href, children, icon: Icon }) {
         <span className="ml-4">{children}</span>
       </Link>
     </li>
-  )
-}
-
-function MailIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        fillRule="evenodd"
-        d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
-      />
-    </svg>
-  )
+  );
 }
 
 export default function About() {
@@ -61,63 +53,69 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I’m Spencer Sharp. I live in New York City, where I design the
-              future.
+              Eu sou Abner Ananias, tenho 22 anos e sou desenvolvedor fullstack.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I’ve loved making things for as long as I can remember, and
-                wrote my first program when I was 6 years old, just two weeks
-                after my mom brought home the brand new Macintosh LC 550 that I
-                taught myself to type on.
+                Eu adoro criar coisas novas. Desenvolver uma nova funcionalidade
+                ou solucionar um bug me traz uma imensa satisfação. Desde quando
+                eu era criança, por volta dos 5 anos, lembro-me do meu primeiro
+                computador e como eu adorava aprender a mexer nele. Aquela
+                experiência era surreal para mim, e desde então, minha paixão
+                por tecnologia só cresceu.
               </p>
               <p>
-                The only thing I loved more than computers as a kid was space.
-                When I was 8, I climbed the 40-foot oak tree at the back of our
-                yard while wearing my older sister’s motorcycle helmet, counted
-                down from three, and jumped — hoping the tree was tall enough
-                that with just a bit of momentum I’d be able to get to orbit.
+                Quando eu tinha 16 anos, criei minha primeira startup. Era um
+                projeto que eu acreditava que revolucionaria o mundo, mas
+                reconheço que não atingiu esse objetivo. No entanto, essa
+                experiência me proporcionou um aprendizado valioso. Eu adorava
+                desenvolver aquele projeto e, desde então, me apaixonei pelo
+                desenvolvimento.
               </p>
               <p>
-                I spent the next few summers indoors working on a rocket design,
-                while I recovered from the multiple surgeries it took to fix my
-                badly broken legs. It took nine iterations, but when I was 15 I
-                sent my dad’s Blackberry into orbit and was able to transmit a
-                photo back down to our family computer from space.
-              </p>
-              <p>
-                Today, I’m the founder of Planetaria, where we’re working on
-                civilian space suits and manned shuttle kits you can assemble at
-                home so that the next generation of kids really <em>can</em>{' '}
-                make it to orbit — from the comfort of their own backyards.
+                Claro que não sou viciado em trabalho, tenho meus hobbies que
+                utilizo tanto para aprimorar minhas habilidades quanto para o
+                lazer. Sou apaixonado por jogar videogames, especialmente os
+                online, e adoro a competitividade que eles proporcionam.
+                Aprender um novo jogo no qual tenho dificuldade é uma das coisas
+                mais empolgantes para mim.
               </p>
             </div>
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href="#" icon={TwitterIcon}>
-                Follow on Twitter
-              </SocialLink>
-              <SocialLink href="#" icon={InstagramIcon} className="mt-4">
-                Follow on Instagram
-              </SocialLink>
-              <SocialLink href="#" icon={GitHubIcon} className="mt-4">
-                Follow on GitHub
-              </SocialLink>
-              <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
-                Follow on LinkedIn
+              <SocialLink
+                href="https://instagram.com/abner.ananias"
+                icon={InstagramIcon}
+                className="mt-4"
+              >
+                @abner.ananias
               </SocialLink>
               <SocialLink
-                href="mailto:spencer@planetaria.tech"
-                icon={MailIcon}
+                href="https://github.com/abnerndr"
+                icon={GitHubIcon}
+                className="mt-4"
+              >
+                @abnerndr
+              </SocialLink>
+              <SocialLink
+                href="https://www.linkedin.com/in/abner-andre-ananias/"
+                icon={LinkedInIcon}
+                className="mt-4"
+              >
+                Abner A. Ananias
+              </SocialLink>
+              <SocialLink
+                href="mailto:abnerndr.dev@gmail.com"
+                icon={MailIcon2}
                 className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
               >
-                spencer@planetaria.tech
+                abnerndr.dev@gmail.com
               </SocialLink>
             </ul>
           </div>
         </div>
       </Container>
     </>
-  )
+  );
 }

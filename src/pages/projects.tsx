@@ -5,12 +5,11 @@ import { Card } from "@/components/Card";
 import { SimpleLayout } from "@/components/SimpleLayout";
 
 import { LinkIcon } from "@/components/Icons";
-import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 import Modal from "@/components/Modal";
 
 import Link from "next/link";
 import { projects } from "./lib/projects";
-import { LanguageContext } from "@/contexts/LeaguageContext";
 
 function ModalProject({ open, setOpen, id }: any) {
   return (
@@ -19,9 +18,9 @@ function ModalProject({ open, setOpen, id }: any) {
         {projects.map(
           (project) =>
             id === project.id && (
-              <Card as="li" key={project.name}>
-                <div className="flex items-center justify-center gap-x-4">
-                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              <div key={project.name} className="w-full">
+                <div className="flex items-center justify-start gap-x-4">
+                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-zinc-700/50 bg-zinc-800 shadow-md shadow-zinc-800/5 ring-0 ring-1 ring-zinc-900/5">
                     <Image
                       src={project.logo}
                       alt=""
@@ -29,32 +28,26 @@ function ModalProject({ open, setOpen, id }: any) {
                       unoptimized
                     />
                   </div>
-                  <h2 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                  <h2 className="text-base font-semibold text-zinc-100">
                     {project.name}
                   </h2>
                 </div>
                 <div className="mb-4 mt-2">
-                  <div>
-                    <Link href={`https://${project.link.repo}`} target="_blank">
-                      <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-violet-500 dark:text-zinc-200">
-                        <LinkIcon className="h-6 w-6 flex-none" />
-                        <span className="ml-4">{project.link.repo}</span>
-                      </p>
-                    </Link>
-                  </div>
-                  <div>
-                    <Link
-                      href={`https://${project.link.label}`}
-                      target="_blank"
-                    >
-                      <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-violet-500 dark:text-zinc-200">
-                        <LinkIcon className="h-6 w-6 flex-none" />
-                        <span className="ml-4">{project.link.label}</span>
-                      </p>
-                    </Link>
-                  </div>
+                  <Link href={`https://${project.link.repo}`} target="_blank">
+                    <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-100 transition hover:text-violet-500 ">
+                      <LinkIcon className="h-6 w-6 flex-none" />
+                      <span className="ml-4 ">{project.link.repo}</span>
+                    </p>
+                  </Link>
+
+                  <Link href={`https://${project.link.label}`} target="_blank">
+                    <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-100 transition hover:text-violet-500 ">
+                      <LinkIcon className="h-6 w-6 flex-none" />
+                      <span className="ml-4">{project.link.label}</span>
+                    </p>
+                  </Link>
                 </div>
-              </Card>
+              </div>
             )
         )}
       </Modal>
@@ -65,20 +58,12 @@ function ModalProject({ open, setOpen, id }: any) {
 export default function Projects() {
   const [openModalProject, setOpenModalProject] = useState<boolean>(false);
   const [idModalProject, setIdModalProject] = useState<number>(0);
-  // const [projects, setProjects] = useState<any[]>(projects_english);
   const handleOpenCard = useCallback((id: any) => {
     if (id) {
       setIdModalProject(id);
       setOpenModalProject(true);
     }
   }, []);
-  const { language } = useContext(LanguageContext);
-  console.log(language, "language");
-  // const language = useMemo(() => localStorage.getItem("language"), []);
-  // useEffect(() => {
-  //   console.log(language, "language");
-  //   setProjects(language === "BR" ? projects_portuguese : projects_english);
-  // }, [language]);
   return (
     <>
       {openModalProject && (
@@ -92,13 +77,16 @@ export default function Projects() {
         <title>Projects - Abner</title>
         <meta
           name="description"
-          content="Things I've done trying to improve my skills."
+          content="
+          Aqui estão algumas coisas que fiz para aprimorar minhas habilidades:"
         />
       </Head>
+
       <SimpleLayout
-        title="Things I've done trying to improve my skills."
+        title="
+        Aqui estão algumas coisas que fiz para aprimorar minhas habilidades:"
         intro="
-        These are some small projects of mine, they are open source and if you want you can check out their native repository."
+        Aqui estão alguns dos meus pequenos projetos de código aberto. Se você quiser, pode conferir o repositório original deles."
       >
         <ul
           role="list"

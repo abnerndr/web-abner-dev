@@ -373,7 +373,7 @@ export function Header() {
                 <div className="pointer-events-auto">
                   <div className="flex items-center gap-x-3">
                     <ModeToggle />
-                    <ToggleFlag />
+                    {false && <ToggleFlag />}
                   </div>
                 </div>
               </div>
