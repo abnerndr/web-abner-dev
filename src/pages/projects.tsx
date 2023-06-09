@@ -9,7 +9,7 @@ import { useCallback, useState } from "react";
 import Modal from "@/components/Modal";
 
 import Link from "next/link";
-import { projects } from "./lib/projects";
+import { projects } from "../utils/projects";
 
 function ModalProject({ open, setOpen, id }: any) {
   return (
