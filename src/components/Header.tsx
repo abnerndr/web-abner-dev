@@ -328,7 +328,7 @@ export function Header() {
             >
               <div
                 className="top-[var(--avatar-top,theme(spacing.3))] w-full"
-                style={{ position: "var(--header-inner-position)" }}
+                // style={{ position: "var(--header-inner-position)" }}
               >
                 <div className="relative">
                   <AvatarContainer
@@ -351,7 +351,7 @@ export function Header() {
         <div
           ref={headerRef}
           className="top-0 z-10 h-16 pt-6"
-          style={{ position: "var(--header-position)" }}
+          // style={{ position: "var(--header-position)" }}
         >
           <Container
             className="top-[var(--header-top,theme(spacing.6))] w-full"
