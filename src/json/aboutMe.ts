@@ -4,23 +4,23 @@ const aboutMe = [
   {
     id: 1,
     icon: UserIcon,
-    title: "About Me",
+    title: "Sobre",
     description:
-      "I'm a junior fullstack developer. I work with ReactJs, NextJs, NodeJs, Typescript, Tailwind, I focus more on the frontend, but I am interested in going deeper into backend technologies and frameworks such as nestJs, AdonisJs, SpringBoot, among others.",
+      "Sou Abner Ananias tenho 22 anos, sou desenvolvedor Full Stack com experiência em ReactJS, Next.js, Node.js, TypeScript e Tailwind. Embora meu foco principal seja o desenvolvimento front-end, tenho interesse em aprofundar meus conhecimentos em tecnologias e frameworks back-end, como Node.js, Adonis.js, NestJs e outros.",
   },
   {
     id: 2,
     icon: UserIcon,
-    title: "More About Me",
+    title: "Mais sobre",
     description:
-      "I've always focused on gaining more knowledge and improving my skills, having knowledge in current technologies and frameworks, I want to become a fullstack with a handful. Have a satisfactory level of excellence.",
+      "Busco constantemente adquirir mais conhecimento e aprimorar minhas habilidades, mantendo-me atualizado com as tecnologias e frameworks mais recentes. Meu objetivo é me tornar um desenvolvedor full stack de alto nível, alcançando um padrão de excelência em minhas entregas.",
   },
   {
     id: 3,
     icon: CodeBracketIcon,
     title: "Skills",
     description:
-      "Keywords that are part of who I am as programmed. Agile developer, JavaScript, Typescript, React, NextJs, Node, NestJs, Jest, Tailwind, StylesComponents, Sass, Testing Library, git.",
+      "Minhas palavras-chave como desenvolvedor incluem agilidade, TypeScript, React, Next.js, Node.js, AdonisJs, Nest.js, Jest, Tailwind, Styled Components, Sass, Testing Library e Git.",
   },
 ];
 

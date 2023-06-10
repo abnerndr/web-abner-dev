@@ -11,38 +11,38 @@ export const projects = [
       "Desenvolvi um navegador em Python com foco no desenvolvimento.",
     link: {
       href: "#",
-      label: "astrobrowser.com",
-      repo: "github.com/astrobrowser",
+      label: "github.com/abnerndr/astrobrowser",
+      repo: "github.com/abnerndr/astrobrowser",
     },
     logo: logoAstronaut,
   },
 
-  {
-    id: 2,
-    name: "Star Wars Libray",
-    description:
-      "High performance web animation library, hand-written in optimized WASM.",
-    link: {
-      href: "#",
-      label: "starwarslibrary.com",
-      repo: "github.com/starwarslibrary",
-    },
-    logo: logoStarWars,
-  },
-  {
-    id: 3,
-    name: "Schedule Date",
-    description:
-      "Creating technology to empower civilians to explore space on their own terms.",
-    link: { href: "#", label: "schedule.tech", repo: "github.com/schedule" },
-    logo: logoSchedule,
-  },
-  {
-    id: 4,
-    name: "My Weather",
-    description:
-      "The operating system that powers our Planetaria space shuttles.",
-    link: { href: "#", label: "myweather.com", repo: "github.com/myweather" },
-    logo: logoMyWeather,
-  },
+  // {
+  //   id: 2,
+  //   name: "Star Wars Libray",
+  //   description:
+  //     "High performance web animation library, hand-written in optimized WASM.",
+  //   link: {
+  //     href: "#",
+  //     label: "starwarslibrary.com",
+  //     repo: "github.com/starwarslibrary",
+  //   },
+  //   logo: logoStarWars,
+  // },
+  // {
+  //   id: 3,
+  //   name: "Schedule Date",
+  //   description:
+  //     "Creating technology to empower civilians to explore space on their own terms.",
+  //   link: { href: "#", label: "schedule.tech", repo: "github.com/schedule" },
+  //   logo: logoSchedule,
+  // },
+  // {
+  //   id: 4,
+  //   name: "My Weather",
+  //   description:
+  //     "The operating system that powers our Planetaria space shuttles.",
+  //   link: { href: "#", label: "myweather.com", repo: "github.com/myweather" },
+  //   logo: logoMyWeather,
+  // },
 ];

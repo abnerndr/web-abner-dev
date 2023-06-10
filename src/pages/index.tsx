@@ -89,9 +89,9 @@ function Resume() {
       company: "Vitae Brasil",
       title: "FullStack Developer",
       logo: logoVitae,
-      start: "2021",
+      start: "nov 2021",
       end: {
-        label: "Present",
+        label: "jun 2023",
         dateTime: new Date().getFullYear(),
       },
     },
@@ -99,7 +99,7 @@ function Resume() {
       company: "Orbt · Autônomo",
       title: "FullStack Developer",
       logo: logoOrbt,
-      start: "2021",
+      start: "dez 2020",
       end: {
         label: "Present",
         dateTime: new Date().getFullYear(),
@@ -203,7 +203,7 @@ function About() {
     <div>
       <div className="mb-4">
         <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-          About Me
+          Sobre mim
         </h1>
       </div>
       {aboutMe.map((about: any) => (
